@@ -92,16 +92,16 @@ int sys_cps(void)
 
 int sys_chpr(void)
 {
-  int pid, pr;
+  int pid, tk;
   if (argint(0, &pid) < 0)
   {
     return -1;
   }
-  if (argint(1, &pr) < 0)
+  if (argint(1, &tk) < 0)
   {
     return -1;
   }
-  return chpr(pid, pr);
+  return chpr(pid, tk);
 }
 
 int sys_settickets(void)

@@ -8,22 +8,22 @@ int chpr(int pid, int priority);
 int main(int argc, char *argv[])
 {
 
-    int priority, pid;
+    int tickets, pid;
     if (argc < 3)
     {
         printf(2, "Usage: nice pid priority\n");
         exit();
     }
     pid = atoi(argv[1]);
-    priority = atoi(argv[2]);
-    printf(2, "%d --- %d\n",pid,priority);
+    tickets = atoi(argv[2]);
+    printf(2, "%d --- %d\n",pid,tickets);
 
-    if (priority < 0 || priority > 20)
+    if (tickets < 0)
     {
-        printf(2, "Invalid priority (0-20)!\n");
+        printf(2, "Invalid tickets!\n");
         exit();
     }
-    chpr(pid, priority);
+    chpr(pid, tickets);
 
     exit();
 }

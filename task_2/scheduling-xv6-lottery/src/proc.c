@@ -682,9 +682,9 @@ int cps() ///////////////////////////////////////////////////////////////////
   return 23;
 }
 
-int chpr(int pid, int priority) ///////////////////////////////////////////////////////////////////
+int chpr(int pid, int tk) ///////////////////////////////////////////////////////////////////
 {
-  cprintf("%d --- %d\n", pid, priority);
+  cprintf("%d --- %d\n", pid, tk);
   struct proc *p;
   //loop over process table looking for process with pid
   acquire(&ptable.lock);
@@ -692,7 +692,7 @@ int chpr(int pid, int priority) ////////////////////////////////////////////////
   {
     if (p->pid == pid)
     {
-      p->priority = priority;
+      p->tickets = tk;
       break;
     }
   }
