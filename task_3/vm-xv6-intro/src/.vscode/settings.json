@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "pstat.h": "c",
+        "rand.h": "c",
+        "stdio.h": "c"
+    }
+}
